@@ -57,7 +57,7 @@ class Kanban extends Component {
     const finish = this.state.columns[destination.droppableId];
 
     if (start === finish) {
-      const newTaskIds = [...column.taskIds];
+      const newTaskIds = [...start.taskIds];
       newTaskIds.splice(source.index, 1);
       newTaskIds.splice(destination.index, 0, draggableId);
 
