@@ -16,8 +16,8 @@ class Kanban extends Component {
   };
 
   componentDidMount() {
-    socket.emit("fetchInitialData");
-    socket.on("initialData", (initialData) => this.setState(initialData));
+    socket.emit("fetchData");
+    socket.on("updatedData", (initialData) => this.setState(initialData));
   }
 
   updateState = (newState) => {
