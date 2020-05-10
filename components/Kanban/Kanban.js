@@ -3,8 +3,6 @@ import { DragDropContext } from "react-beautiful-dnd";
 import styled from "styled-components";
 import Column from "./Column";
 
-const columns = ["Pending", "In Progress", "Done"];
-
 const initialData = {
   tasks: {
     "task-1": { id: "task-1", content: "Take out the garbage" },
@@ -61,7 +59,7 @@ class Kanban extends Component {
       newTaskIds.splice(source.index, 1);
       newTaskIds.splice(destination.index, 0, draggableId);
 
-      const newColumn = { ...column, taskIds: newTaskIds };
+      const newColumn = { ...start, taskIds: newTaskIds };
 
       const newState = {
         ...this.state,
